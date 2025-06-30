@@ -2,17 +2,6 @@
 #include<string>
 #include "funciones.h"
 using namespace std;
-const int Ctc = 100;
-struct contactoEmail{
-	string Nom;
-	string Sx;
-	int Eda;
-	string Tel;
-	string Mail;
-	string Nac;
-};
-contactoEmail Ag[Ctc];
-int Tctc = 0;
 void Agregarcontacto(){
 	if(Tctc<Ctc){
 		contactoEmail nuevo;
@@ -38,5 +27,29 @@ void Agregarcontacto(){
 		cout<<"Contacto agregado"<<endl;
 	}else{
 		cout<<"No se puede agregar mas contactos. Limite alcanzado"<<endl;
+	}
+}
+void Eliminarcontacto(){
+	if(Tctc==0){
+		cout<<"No hay contactos registrados"<<endl;
+	}else{
+		string BuContc;
+		cout<<"Ingrese el email del contacto a eliminar: ";
+		getline(cin, BuContc);
+		int ContcEli = -1;
+		for(int i= 0; i < Tctc; i++){
+			if(Ag[i].Mail == BuContc){
+				ContcEli=i;
+			}
+		}
+		if(ContcEli != -1){
+			for(int j = ContcEli; j<Tctc-1; j++){
+				Ag[j]=Ag[j+1];
+			}
+			Tctc--;
+			cout<<"Contacto eliminado"<<endl;
+		}else{
+			cout<<"Contacto no encontrado"<<endl;
+		}
 	}
 }
