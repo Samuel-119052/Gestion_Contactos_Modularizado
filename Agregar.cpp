@@ -2,6 +2,9 @@
 #include<string>
 #include "funciones.h"
 using namespace std;
+const int Ctc = 100;
+contactoEmail Ag[Ctc];
+int Tctc = 0;
 void Agregarcontacto(){
 	if(Tctc<Ctc){
 		contactoEmail nuevo;
@@ -51,5 +54,20 @@ void Eliminarcontacto(){
 		}else{
 			cout<<"Contacto no encontrado"<<endl;
 		}
+	}
+}
+void Mostrarcontactos(){
+	if(Tctc==0){
+		cout<<"No hay contactos registrados"<<endl;
+	}
+	for(int i= 0; i<Tctc; i++){
+		contactoEmail c = Ag[i];
+		cout<<"Contacto #"<<i+1<<": "<<endl;
+		cout<<"Nombre completo: "<< c.Nom<<endl;
+		cout<<"Sexo: "<<c.Sx<<endl;
+		cout<<"Edad: "<<c.Eda<<endl;
+		cout<<"Numero de telefono: "<<c.Tel<<endl;
+		cout<<"Email: "<<c.Mail<<endl;
+		cout<<"Nacionalidad: "<<c.Nac<<endl;
 	}
 }
