@@ -21,7 +21,7 @@ int main() {
 		}else if(op=='3'){
 			Mostrarcontactos();
 		}else if(op=='4'){
-			//Mostrarcontactosporservidor();
+			Mostrarcontactosporservidor();
 		}else if(op=='5'){
 			cout<<"Saliendo del programa..."<<endl;
 		}else{
