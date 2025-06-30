@@ -14,5 +14,6 @@ struct contactoEmail{
 void Agregarcontacto();
 void Eliminarcontacto();
 void Mostrarcontactos();
+void Mostrarcontactosporservidor();
 
 #endif
