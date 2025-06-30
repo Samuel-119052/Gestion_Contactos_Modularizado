@@ -19,7 +19,7 @@ int main() {
 		}else if(op=='2'){
 			Eliminarcontacto();
 		}else if(op=='3'){
-			//Mostrarcontactos();
+			Mostrarcontactos();
 		}else if(op=='4'){
 			//Mostrarcontactosporservidor();
 		}else if(op=='5'){
