@@ -71,3 +71,50 @@ void Mostrarcontactos(){
 		cout<<"Nacionalidad: "<<c.Nac<<endl;
 	}
 }
+string Obtenerservidor(const string& Mail){
+	string serv = "";
+	bool Arb = false;
+	for(int i=0; Mail[i]!='\0'; i++){
+		if(Arb){
+			serv += Mail[i];
+		}
+		if(Mail[i]=='@'){
+			Arb = true;
+		}
+	}
+	return serv;
+}
+void Mostrarcontactosporservidor(){
+	if(Tctc==0){
+		cout<<"No hay contactos registrados"<<endl;
+	}else{
+		contactoEmail aux[Ctc];
+		for(int i=0; i<Tctc; i++){
+			aux[i]=Ag[i];
+		}
+		for(int i=0; i<Tctc; i++){
+			for(int j=0; j<Tctc-i-1; j++){
+				string serv1 = Obtenerservidor(aux[i].Mail);
+				string serv2 = Obtenerservidor(aux[j].Mail);
+				if(serv1>serv2){
+					contactoEmail aux1 = aux[i];
+					aux[i] = aux[j];
+					aux[j] = aux1;
+				}
+			}
+		}
+		string sev = "";
+		for(int i=0; i<Tctc; i++){
+			string sv = Obtenerservidor(aux[i].Mail);
+			if(sv != sev){
+				cout<<"\nServidor: "<<sv<<endl;
+				sev=sv;
+			}
+			cout<<" - "<< aux[i].Nom << " ("<<aux[i].Mail<<") "<<endl;
+			cout<<"Sexo: "<<aux[i].Sx<<endl;
+			cout<<"Edad: "<<aux[i].Eda<<endl;
+			cout<<"Telefono: "<<aux[i].Tel<<endl;
+			cout<<"Nacionalidad: "<<aux[i].Nac<<endl;
+		}
+	}
+}
