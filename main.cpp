@@ -17,7 +17,7 @@ int main() {
 		if(op=='1'){
 			Agregarcontacto();
 		}else if(op=='2'){
-			//Eliminarcontacto();
+			Eliminarcontacto();
 		}else if(op=='3'){
 			//Mostrarcontactos();
 		}else if(op=='4'){
